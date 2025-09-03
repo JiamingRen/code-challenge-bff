@@ -1,11 +1,8 @@
-import type { ProductType } from "../types";
+import type { BuyXGetYFreeType } from "../types";
 
-interface BuyXGetYFreeProps {
-    product: ProductType;
-    buy: number;
-    free: number;
-    quantity: number;
-}
+
+
+type BuyXGetYFreeProps = Omit<BuyXGetYFreeType, "name">
 
 /**
  * Get Y free when X is bought
