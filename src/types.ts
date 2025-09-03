@@ -10,15 +10,18 @@ export interface BuyXGetYFreeType {
     product: ProductType;
     buy: number;
     free: number;
-    quantity: number;
 }
 export interface BulkDiscountType {
     name: "bulkDiscount";
     product: ProductType;
-    quantity: number;
     quantity_threshold: number;
     discount_price: number;
 }
 
-export type PricingRuleType = BuyXGetYFreeType | BulkDiscountType;
+export interface FullPriceType {
+    name: "fullPrice";
+    product: ProductType;
+}
+
+export type PricingRuleType = BuyXGetYFreeType | BulkDiscountType | FullPriceType;
 
