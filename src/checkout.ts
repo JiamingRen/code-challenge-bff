@@ -17,6 +17,10 @@ export class Checkout {
         Object.entries(this.items).forEach(([item_sku, quantity]) => {
             const rule = this.pricingRules.find((rule) => rule.product.sku === item_sku);
 
+            if (!rule) {
+                throw new Error(`Failed to scan ${item_sku}: No pricing rule found`);
+            }
+
             if (rule?.name === "buyXGetYFree") {
                 total += buyXGetYFree({ product: rule.product, buy: rule.buy, free: rule.free, quantity: quantity });
             } else if (rule?.name === "bulkDiscount") {
