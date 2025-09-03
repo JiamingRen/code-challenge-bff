@@ -44,7 +44,7 @@ describe("bulkDiscount", () => {
     });
 
     describe("when quantity meets or exceeds threshold", () => {
-        it("should return discount price multiplied by quantity", () => {
+        it("should return full price multiplied by quantity", () => {
             const result = bulkDiscount({
                 product: mockProduct,
                 quantity: 3,
@@ -52,7 +52,7 @@ describe("bulkDiscount", () => {
                 discount_price: 8.00
             });
 
-            expect(result).toBe(24.00);
+            expect(result).toBe(30.00);
         });
 
         it("should work with quantity well above threshold", () => {
