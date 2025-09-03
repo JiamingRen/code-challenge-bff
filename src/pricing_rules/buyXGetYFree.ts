@@ -2,7 +2,7 @@ import type { BuyXGetYFreeType } from "../types";
 
 
 
-type BuyXGetYFreeProps = Omit<BuyXGetYFreeType, "name">
+type BuyXGetYFreeProps = Omit<BuyXGetYFreeType, "name"> & { quantity: number };
 
 /**
  * Get Y free when X is bought

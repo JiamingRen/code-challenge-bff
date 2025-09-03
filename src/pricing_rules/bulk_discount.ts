@@ -1,6 +1,7 @@
 import type { BulkDiscountType } from "../types";
 
-type BulkDiscountProps = Omit<BulkDiscountType, "name">
+// omit the name and add quantity
+type BulkDiscountProps = Omit<BulkDiscountType, "name"> & { quantity: number };
 
 export function bulkDiscount({ product, quantity, quantity_threshold, discount_price }: BulkDiscountProps) {
     const { price: original_price, sku } = product
