@@ -31,6 +31,6 @@ export class Checkout {
 
         })
 
-        console.log(total);
+        return total;
     }
 }
