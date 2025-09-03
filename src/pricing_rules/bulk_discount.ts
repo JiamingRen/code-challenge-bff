@@ -4,11 +4,10 @@ import type { BulkDiscountType } from "../types";
 type BulkDiscountProps = Omit<BulkDiscountType, "name"> & { quantity: number };
 
 export function bulkDiscount({ product, quantity, quantity_threshold, discount_price }: BulkDiscountProps) {
-    const { price: original_price, sku } = product
+    const { price: original_price } = product
     validate(original_price, quantity, quantity_threshold, discount_price);
 
-    if (quantity < quantity_threshold) {
-        console.log(`${sku} quantity ${quantity} is less than quantity threshold ${quantity_threshold}, no discount`);
+    if (quantity <= quantity_threshold) {
         return original_price * quantity;
     }
 

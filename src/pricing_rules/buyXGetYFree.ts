@@ -13,11 +13,10 @@ type BuyXGetYFreeProps = Omit<BuyXGetYFreeType, "name"> & { quantity: number };
  * if the quantity is 6, the price will be the price of 4 items
  */
 export function buyXGetYFree({ product, buy, free, quantity }: BuyXGetYFreeProps) {
-    const { price, sku } = product
+    const { price } = product
     validate(price, buy, free, quantity);
 
     if (quantity < buy) {
-        console.log(`${sku} quantity ${quantity} is less than buy ${buy}, no free items`);
         return price * quantity;
     }
 
