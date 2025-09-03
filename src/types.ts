@@ -1,5 +1,6 @@
+export type ValidSKU = "ipd" | "mbp" | "atv" | "vga"
 export interface ProductType {
-    sku: string;
+    sku: ValidSKU;
     name: string;
     price: number;
 }

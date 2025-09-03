@@ -3,7 +3,7 @@ import type { ProductType } from "../types";
 
 describe("bulkDiscount", () => {
     const mockProduct: ProductType = {
-        sku: "TEST001",
+        sku: "atv",
         name: "Test Product",
         price: 10.00
     };
@@ -193,7 +193,7 @@ describe("bulkDiscount", () => {
 
         it("should work with decimal prices", () => {
             const decimalProduct: ProductType = {
-                sku: "DEC001",
+                sku: "ipd",
                 name: "Decimal Product",
                 price: 9.99
             };
@@ -221,7 +221,7 @@ describe("bulkDiscount", () => {
 
         it("should handle floating point precision correctly", () => {
             const product: ProductType = {
-                sku: "FLOAT001",
+                sku: "mbp",
                 name: "Float Product",
                 price: 0.1
             };
@@ -240,7 +240,7 @@ describe("bulkDiscount", () => {
     describe("real-world scenarios", () => {
         it("should handle typical bulk discount scenario", () => {
             const product: ProductType = {
-                sku: "WIDGET",
+                sku: "vga",
                 name: "Premium Widget",
                 price: 49.99
             };
@@ -258,7 +258,7 @@ describe("bulkDiscount", () => {
 
         it("should calculate correctly when just below bulk threshold", () => {
             const product: ProductType = {
-                sku: "BOOK",
+                sku: "mbp",
                 name: "Technical Manual",
                 price: 25.00
             };

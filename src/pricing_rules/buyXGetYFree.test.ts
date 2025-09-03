@@ -3,7 +3,7 @@ import type { ProductType } from '../types';
 
 describe('buyXGetYFree', () => {
     const testProduct: ProductType = {
-        sku: 'TEST',
+        sku: 'ipd',
         name: 'Test Product',
         price: 10
     };
